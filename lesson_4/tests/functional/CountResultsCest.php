@@ -8,6 +8,9 @@ class CountResultsCest
    
     public function checkSearchByText(FunctionalTester $I)
     {    
+        $searchInputFieldCSS = '';
+        $searchInputFieldXPath = ''; 
+
         $I->amOnPage('');
         $I->seeElement('#search_query_top');
         $I->click('#search_query_top');
