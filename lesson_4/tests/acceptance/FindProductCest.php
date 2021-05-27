@@ -17,7 +17,7 @@ class FindProductCest
         $buttonClickXPath = '//ul[@id="homefeatured"]/li[2]//a[@class="quick-view"]';
         $iFrameCSS = '.fancybox-iframe';
         $iFrameXPath = '//iframe[@class="fancybox-iframe"]';
-        $iFramesFindTextCSS = "#product h1";
+        $iFramesFindTextCSS = '#product h1';
         $iFramesFindTextXPath = '//*[@id="product"]/div/div/div[2]/h1';
 
         $I->amOnPage('');
