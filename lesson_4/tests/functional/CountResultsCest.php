@@ -3,10 +3,10 @@
 class CountResultsCest
 {
     /**
-     * Проверить поиск по названию и количество найденных наименований
+     * Проверить поиск по названию Printed dress и количество найденных наименований
      */
-    // tests
-    public function tryToTest(FunctionalTester $I)
+   
+    public function checkSearchByText(FunctionalTester $I)
     {    
         $I->amOnPage('');
         $I->seeElement('#search_query_top');
