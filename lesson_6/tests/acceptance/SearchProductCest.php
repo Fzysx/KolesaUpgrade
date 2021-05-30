@@ -4,7 +4,7 @@ use Page\Acceptance\MainShopPage;
 use Page\Acceptance\SearchPage;
 
 /**
- * Класс для проверки авторизации з
+ * Класс для поиска продукта
  */
 class SearchProductCest
 {
@@ -19,25 +19,14 @@ class SearchProductCest
 
         $I->amOnPage(MainShopPage::$URL);
         $MainShopPage->findCatalogProduct();
-        //$I->wait(5);
         $MainShopPage->clickOnFindProduct();
-        //$I->wait(5);
         $I->seeInCurrentUrl(SearchPage::$URL);
-        $I->seeElement('//*[@id="grid"] [@class="selected"]');
-        $I->seeElement('');
-
+        $I->amOnPage(SearchPage::$URL);
+        $I->seeElement(SearchPage::$gridDisplayButtonActive);
+        $I->seeElement(SearchPage::$gridDisplayProduct);
+        $SearchPage->clickListDisplayButton();
+        $I->seeElement(SearchPage::$listDisplayButtonActive);
+        $I->seeElement(SearchPage::$listDisplayProduct);
         
-        
-        
-
-
-        //$BlockLoginPage->fillUsernameField();
-        //$BlockLoginPage->fillPasswordField();
-        //$BlockLoginPage->clickSubmit();
-        //$I->seeElement(BlockLoginPage::$errorBlock);
-        //var_dump($I->grabTextfrom('//span[@class="title"]'));
-        //$I->waitForText(BlockLoginPage::ERROR_TEXT,5 , BlockLoginPage::$errorBlockText);
-        //$BlockLoginPage->clickCloseButton();
-       // $I->dontSeeElement(BlockLoginPage::$errorBlock);
     }
 }

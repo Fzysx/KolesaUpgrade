@@ -8,35 +8,33 @@ class SearchPage
     /**
      * URL страницы авторизации
      */
-    public static $URL = '/index.php?id_category=11&controller=category';
+    public static $URL = '?id_category=11&controller=category';
 
      /**
-     * Селектор поля ввода для логина
+     * Селектор активной кнопки табличного отображения товаров 
      */
-    public static $loginInput = '//*[@id="user-name"]';
+    public static $gridDisplayButtonActive = '//*[@id="grid"][@class="selected"]//i[@class="icon-th-large"]';
 
     /**
-     * Селектор поля ввода для пароля
+     * Селектор активной кнопки строчного отображения товаров
      */
-    public static $passwordInput = '//*[@id="password"]'; 
+    public static $listDisplayButtonActive = '//*[@id="list"][@class="selected"]//i[@class="icon-th-list"]'; 
 
     /**
-     * Селектор кнопки авторизации
+     * Селектор не активной кнопки строчного отображения товаров
      */
-    public static $loginButton = '//*[@id="login-button"]';
+    public static $listDisplayButton = '//*[@id="list"][not(@class="selected")]//i[@class="icon-th-list"]'; 
 
     /**
-     * Селектор элемента ошибки авторизации
+     * Селектор показывающий табличное отображения элементов
      */
-    public static $errorBlock = '//*[@class="error-message-container error"]';
+    public static $gridDisplayProduct = '//ul[@class="product_list row grid"]';
+
     /**
-     * Селектор текста ошибки авторизации
+     * Селектор показывающий строчное отображаение элементов
      */
-    public static $errorBlockText = '//*[@class="error-message-container error"]/h3[@data-test="error"]';
-    /**
-     * Селектор кнопки закрытия ошибки (крестик 'X') расположенной на блоке с ошибкой
-     */
-    public static $errorCloseButton = '//button[@class="error-button"]';
+    public static $listDisplayProduct = '//ul[@class="product_list row list"]'; 
+
     /**
      * Объект Tester-а
      * @var \AcceptanceTester;
@@ -52,22 +50,13 @@ class SearchPage
     }
 
     /**
-     * Кликает на кнпоку логина
+     * Кликает на кнпоку строчного отображения элементов
      */
-    public function clickSubmit()
+    public function clickListDisplayButton()
     {
-        $this->acceptanceTester->click(self::$loginButton);
+        $this->acceptanceTester->click(self::$listDisplayButton);
 
     
     }
-    /**
-     * Закрывает блок с ошибкой нажав на крестик 'X'
-     */
-    public function clickCloseButton()
-    {
-        $this->acceptanceTester->click(self::$errorCloseButton);
-
-      
-    }
-
+    
 }
