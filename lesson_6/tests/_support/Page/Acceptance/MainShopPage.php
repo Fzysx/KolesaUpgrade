@@ -46,7 +46,7 @@ class MainShopPage
         return $this;
     }
     /**
-     * Кликаем на нужно пункте каталога
+     * Кликаем на нужном пункте каталога
      */
     public function clickOnFindProduct()
     {

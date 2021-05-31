@@ -10,7 +10,7 @@ class SearchProductCest
 {
     
     /**
-     * Проверяет не успешную автризацию
+     * Проверяет расположение товаров по типам на странице
      */
     public function checkProductDisplay(AcceptanceTester $I)
     {

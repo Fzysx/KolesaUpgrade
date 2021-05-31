@@ -9,7 +9,7 @@ class BlockLoginCest
 {
     
     /**
-     * Проверяет не успешную автризацию
+     * Проверяет авторизацию заблокированного пользователя
      */
     public function checkSuccesLogin(AcceptanceTester $I)
     {

@@ -10,7 +10,7 @@ class BlockLoginPage
      */
     public const USERNAME = 'locked_out_user';
     /**
-     * Стандартный password для упешной авторизации
+     * Стандартный password для авторизации
      */
     public const PASSWORD = 'secret_sauce';
     /**

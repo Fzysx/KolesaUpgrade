@@ -1,7 +1,7 @@
 <?php
 namespace Page\Acceptance;
 /**
- * Главная страница интернет магазина
+ * Страница просмотра товаров
  */
 class SearchPage
 {
