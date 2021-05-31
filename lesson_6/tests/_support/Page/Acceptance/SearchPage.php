@@ -6,7 +6,7 @@ namespace Page\Acceptance;
 class SearchPage
 {
     /**
-     * URL страницы авторизации
+     * URL страницы выбранного товара
      */
     public static $URL = '?id_category=11&controller=category';
 

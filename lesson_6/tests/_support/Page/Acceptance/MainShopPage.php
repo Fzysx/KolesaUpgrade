@@ -7,7 +7,7 @@ namespace Page\Acceptance;
 class MainShopPage
 {
         /**
-     * URL страницы авторизации
+     * URL страницы магазина (Главная старница магазина)
      */
     public static $URL = '';
 
