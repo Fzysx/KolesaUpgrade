@@ -11,7 +11,7 @@ modules:
         - \Helper\Acceptance
     config:
         WebDriver:
-            url: https://prostochizh.github.io/form/
+            url: https://habr.com/ru/
             host: localhost
             port: 9515
             browser: chrome

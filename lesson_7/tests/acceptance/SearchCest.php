@@ -12,32 +12,25 @@ use Page\Search;
 class SearchCest 
 {
     /**
-     * Тест на проверку легковых по типу кузова
+     * Тест на проверку категорий меню
      * @group test
      * @param Example $data
-     * @dataProvider getDataForSearchCarsbyBody
+     * @dataProvider getDataForCategoryType
      */
-    public function searchCarsByBodyType(\AcceptanceTester $I, Example $data)
+    public function searchCategoryType(\AcceptanceTester $I, Example $data)
     {
         $I->amOnPage('');
-        $I->waitForElementClickable(Search::$autoCarsLink);
-        $I->click(Search::$autoCarsLink);
-        $I->waitForElementClickable(Search::$optionalSearchLink);
-        $I->click(Search::$optionalSearchLink);
-        $I->waitForElementClickable(Search::$carBodyTypeField);
-        $I->click(Search::$carBodyTypeField);
-        $I->click(sprintf(Search::$carBodyType, $data['carBodyType']));
-        $I->click(Search::$searchButton);
+        $I->click(sprintf(Search::$menuCategoryName, $data['categoryNameLink']));
         $I->seeInCurrentUrl($data['url']);
     }
 
-    protected function getDataForSearchCarsbyBody()
+    protected function getDataForCategoryType()
     {
-       
-
-        return [
-            ['carBodyType' => 'sedan', 'url' => 'sedan'],
-            ['carBodyType' => 'station-wagon', 'url' => 'station-wagon']
-        ];
+        
+      return [
+        ['categoryNameLink' => '[@id="navbar-links"]/li[2]/a', 'url' => 'flows/develop'],
+        ['categoryNameLink' => '[@id="navbar-links"]/li[5]/a', 'url' => 'flows/management']
+      ];
+        
     }
 }
